@@ -304,6 +304,64 @@ html[data-theme="dark"] .ins-x b{color:#9DB8E8;}
 .empty{color:var(--t3);padding:26px;text-align:center;font-size:13px;font-style:italic;}
 .foot{text-align:center;padding:26px;color:var(--t3);font-size:11.5px;}
 
+/* ===== PRICE TOOLBAR (thanh set giá trên cao) ===== */
+.ptbar{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:14px;overflow:visible;}
+.ptbar-head{display:flex;align-items:center;gap:10px;padding:10px 15px;cursor:pointer;user-select:none;}
+.ptbar-head .ic{font-size:16px;}
+.ptbar-head .ttl{font-size:13px;font-weight:800;color:var(--t1);}
+.ptbar-head .sm{font-size:11.5px;color:var(--t3);font-weight:600;}
+.ptbar-head .cur{margin-left:auto;font-size:12px;font-weight:800;color:var(--blue);background:var(--pale);border:1px solid var(--lblue);border-radius:16px;padding:3px 12px;}
+.ptbar-head .arw{font-size:12px;color:var(--t3);transition:transform .2s;}
+.ptbar.open .ptbar-head .arw{transform:rotate(180deg);}
+.ptbar-body{display:none;padding:4px 16px 16px;border-top:1px solid var(--br);}
+.ptbar.open .ptbar-body{display:block;}
+.ptbar-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start;}
+@media(max-width:900px){.ptbar-grid{grid-template-columns:1fr;}}
+.ptbar-col .lbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin:12px 0 6px;display:flex;align-items:center;gap:6px;}
+.ptbar-col .expl{font-size:11.5px;color:var(--t2);line-height:1.5;background:var(--pale);border:1px solid var(--lblue);border-radius:8px;padding:8px 11px;margin-bottom:8px;}
+.ptbar-col .expl b{color:var(--navy);}
+html[data-theme="dark"] .ptbar-col .expl b{color:var(--sky);}
+/* horizontal dual slider reuse .drs */
+.ptbar .drs{margin:14px 10px 6px;}
+.segbtns{display:inline-flex;background:var(--pale);border:1px solid var(--br);border-radius:9px;padding:3px;gap:2px;}
+.segbtns button{border:0;background:transparent;color:var(--t2);font:700 11.5px/1 var(--ff);padding:6px 12px;border-radius:7px;cursor:pointer;transition:.15s;}
+.segbtns button.on{background:var(--sf);color:var(--blue);box-shadow:0 1px 3px rgba(0,48,71,.18);}
+.seg-th-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;}
+.seg-th{flex:1;min-width:120px;}
+.seg-th label{font-size:10px;font-weight:800;text-transform:uppercase;color:var(--t3);display:block;margin-bottom:3px;}
+.seg-th input{width:100%;padding:7px 9px;border:1.5px solid var(--br);border-radius:7px;font-family:var(--ff);font-size:12.5px;font-weight:700;color:var(--t1);background:var(--sf);outline:none;}
+.seg-th input:focus{border-color:var(--blue);}
+.seg-pills{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.seg-pill{flex:1;min-width:110px;border-radius:9px;padding:9px 11px;color:#fff;font-weight:800;font-size:12px;text-align:center;line-height:1.3;}
+.seg-pill small{display:block;font-weight:600;font-size:10.5px;opacity:.92;margin-top:2px;}
+
+/* ===== SMART SEARCH (Type/Origin) ===== */
+.smart{position:relative;margin:2px 0 4px;}
+.smart-inp{width:100%;padding:8px 30px 8px 32px;border:1.5px solid var(--br);border-radius:9px;font-family:var(--ff);font-size:12.5px;font-weight:600;color:var(--t1);background:var(--sf);outline:none;}
+.smart-inp:focus{border-color:var(--blue);}
+.smart .sic{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--t3);pointer-events:none;}
+.smart .sclr{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--t3);cursor:pointer;background:none;border:none;padding:2px;}
+.smart-menu{position:absolute;top:calc(100% + 3px);left:0;right:0;background:var(--sf);border:1px solid var(--br);border-radius:10px;box-shadow:var(--sh2);max-height:260px;overflow-y:auto;z-index:40;display:none;}
+.smart-menu.on{display:block;}
+.smart-opt{padding:8px 12px;font-size:12.5px;font-weight:600;color:var(--t1);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--br);}
+.smart-opt:last-child{border-bottom:none;}
+.smart-opt:hover,.smart-opt.hl{background:var(--pale);}
+.smart-opt.sel{background:var(--blue);color:#fff;}
+.smart-opt .cnt{font-size:10.5px;color:var(--t3);font-weight:700;}
+.smart-opt.sel .cnt{color:rgba(255,255,255,.8);}
+.smart-cur{font-size:11px;color:var(--t2);font-weight:700;margin-top:5px;padding:0 2px;display:flex;align-items:center;gap:5px;}
+.smart-cur b{color:var(--blue);}
+
+/* ===== CHART INFO TOOLTIP (ⓘ) ===== */
+.ct-wrap{display:flex;align-items:center;gap:6px;}
+.cinfo{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--pale);border:1.3px solid var(--lblue);color:var(--blue);font-size:11px;font-weight:900;cursor:help;flex-shrink:0;font-style:normal;position:relative;}
+.cinfo:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.cinfo .cinfo-pop{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:250px;background:#003047;color:#fff;padding:10px 13px;border-radius:9px;font-size:12px;font-weight:500;line-height:1.55;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .15s;z-index:120;text-align:left;font-style:normal;letter-spacing:normal;text-transform:none;}
+.cinfo .cinfo-pop::before{content:"";position:absolute;bottom:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#003047;}
+.cinfo:hover .cinfo-pop{opacity:1;}
+.cinfo .cinfo-pop.flip{top:auto;bottom:calc(100% + 8px);}
+.cinfo .cinfo-pop.flip::before{bottom:auto;top:100%;border-bottom-color:transparent;border-top-color:#003047;}
+
 @media print{
   @page{size:A4 landscape;margin:9mm;}
   .hdr-r,.nav,#drill,.dl-btn,.sidebar,.sb-toggle{display:none !important;}
@@ -535,6 +593,17 @@ function money(usd){if(usd==null||isNaN(usd))return"—";var v=toCur(usd),a=Math
   if(a>=1e6)return s+(v/1e6).toFixed(2).replace(/\.?0+$/,"")+"M";if(a>=1e3)return s+(v/1e3).toFixed(1).replace(/\.0$/,"")+"K";
   if(S.currency==="JPY")return s+nf(v);return s+v.toFixed(2).replace(/\.00$/,"");}
 function moneyFull(usd){if(usd==null||isNaN(usd))return"—";var v=toCur(usd);if(S.currency==="VND")return nf(v)+"₫";if(S.currency==="JPY")return "¥"+nf(v);return "$"+(v<100?v.toFixed(2):nf(v));}
+/* Đơn giá/chiếc: GIỮ phần thập phân (giá thường < $10 → không được làm tròn về 0). */
+function uprice(usd){if(usd==null||isNaN(usd))return"—";var v=toCur(usd),s=curSym(),a=Math.abs(v);
+  if(S.currency==="VND")return s+nf(v);
+  if(S.currency==="JPY")return s+(a<10?v.toFixed(1):nf(v));
+  if(a>=100)return s+nf(v);
+  if(a>=1)return s+v.toFixed(2);
+  return s+v.toFixed(3);}  // <$1 → 3 chữ số (vd $0.425)
+/* uprFmt: v ĐÃ ở đơn vị tiền hiện tại (đã nhân FX) — dùng cho trục & datalabel chart giá. */
+function uprFmt(v){if(v==null||isNaN(v))return"—";var s=curSym(),a=Math.abs(v);
+  if(S.currency==="VND")return s+nf(v);
+  if(a>=100)return s+nf(v);if(a>=1)return s+v.toFixed(2);if(a>0)return s+v.toFixed(3);return s+"0";}
 function mval(n){return S.metric==="val"?money(n):qf(n);}
 function metricLabel(){return S.metric==="val"?(t("metric.val")+" ("+S.currency+")"):(t("metric.qty")+" ("+t("unit.pcs")+")");}
 function pct(n){if(isNaN(n))return"—";return n.toFixed(1)+"%";}
@@ -550,20 +619,21 @@ function toNum(v){if(v==null||v==="")return 0;if(typeof v==="number")return v;va
 function parseYear(v){var n=toNum(v);if(n>=2000&&n<=2100)return Math.round(n);var m=String(v||"").match(/(20\d{2})/);return m?+m[1]:0;}
 
 function normalizeRow(o){
-  var brand=String(pick(o,["brand","Tên hãng","BH"])||"").trim();
-  var ptype=String(pick(o,["ptype","Chủng loại","Loại sản phẩm","AY"])||"").trim();
+  // GS v2 dùng field ngắn (b,t,n,o,y,m,q,p,dp,pb,v); vẫn tương thích v1 (tên dài).
+  var brand=String(pick(o,["b","brand","Tên hãng","BH"])||"").trim();
+  var ptype=String(pick(o,["t","ptype","Chủng loại","Loại sản phẩm","AY"])||"").trim();
   var lo=ptype.toLowerCase(); if(ptype===""||lo==="other"||lo==="khác"||lo==="khac")ptype="Khác / Other";
-  var bname=String(pick(o,["brandname","Tên nhãn hiệu","BE"])||"").trim()||"(không rõ)";
-  var origin=String(pick(o,["origin","Tên nước xuất xứ","Tên nuớc xuất xứ","Tên nước xuất xứ đầy đủ","Y","BI"])||"").trim()||"(không rõ)";
-  var year=parseYear(pick(o,["year","Năm","C"]));
-  var month=pick(o,["month","Tháng"])||"";
-  var qty=toNum(pick(o,["qty","Lượng","W"]));
-  var pcs=toNum(pick(o,["pcs","Số lượng (PCS)","số lượng ( PCS)","BK"])); if(!pcs&&qty)pcs=qty;
-  var declPrice=toNum(pick(o,["price","Đơn giá","Đơn giá khai báo(USD)","N"]));   // đơn giá khai báo (USD), theo đơn vị "Lượng"
-  var pcsPerBox=toNum(pick(o,["pcsPerBox","Số chiếc/hộp","BJ"]));
-  var val=toNum(pick(o,["val","Trị giá USD","BM"]));
+  var bname=String(pick(o,["n","brandname","Tên nhãn hiệu","BE"])||"").trim()||"(không rõ)";
+  var origin=String(pick(o,["o","origin","Tên nước xuất xứ","Tên nuớc xuất xứ","Tên nước xuất xứ đầy đủ","BI"])||"").trim()||"(không rõ)";
+  var year=parseYear(pick(o,["y","year","Năm","C"]));
+  var month=pick(o,["m","month","Tháng"])||"";
+  var qty=toNum(pick(o,["q","qty","Lượng","W"]));
+  var pcs=toNum(pick(o,["p","pcs","Số lượng (PCS)","số lượng ( PCS)","BK"])); if(!pcs&&qty)pcs=qty;
+  var declPrice=toNum(pick(o,["dp","price","Đơn giá","Đơn giá khai báo(USD)","N"]));
+  var pcsPerBox=toNum(pick(o,["pb","pcsPerBox","Số chiếc/hộp","BJ"]));
+  var val=toNum(pick(o,["v","val","Trị giá USD","BM"]));
   if(!val&&declPrice&&qty)val=declPrice*qty;
-  // ĐƠN GIÁ/CHIẾC = đơn giá khai báo ÷ số chiếc/hộp (yêu cầu). fallback: val/pcs.
+  // ĐƠN GIÁ/CHIẾC = đơn giá khai báo ÷ số chiếc/hộp. fallback: val/pcs.
   var uprice=0;
   if(declPrice>0&&pcsPerBox>0)uprice=declPrice/pcsPerBox;
   else if(val>0&&pcs>0)uprice=val/pcs;
@@ -571,19 +641,38 @@ function normalizeRow(o){
           qty:qty,pcs:pcs,declPrice:declPrice,pcsPerBox:pcsPerBox,val:val,uprice:uprice};
 }
 
-function fetchData(){
+var CACHE_KEY="mmh_imp_cache_v2", CACHE_TTL=6*60*60*1000; // 6h client cache
+function ingest(j){
+  if(!j||j.ok===false)throw new Error((j&&j.error)||"GAS error");
+  var raw=j.rows||j.data||[];
+  ROWS=raw.map(normalizeRow).filter(function(r){return r.year>0||r.val>0||r.pcs>0;});
+  buildIndex();computeSegDefaults();
+  if(!S.brand||BRANDS.indexOf(S.brand)<0)S.brand=BRANDS[0]||null;
+  if(!S.vsA||BRANDS.indexOf(S.vsA)<0)S.vsA=BRANDS[0]||null;
+  if(!S.vsB||BRANDS.indexOf(S.vsB)<0)S.vsB=BRANDS[1]||BRANDS[0]||null;
+  var meta=j.meta||{};
+  document.getElementById("src-tx").textContent="Live · "+nf(ROWS.length)+" "+t("unit.lines")+(meta.exported?(" · "+meta.exported):"");
+}
+function fetchData(force){
+  // 1) Dùng cache client (sessionStorage) → hiển thị TỨC THÌ, rồi làm mới ngầm.
+  var usedCache=false;
+  if(!force){
+    try{
+      var c=JSON.parse(sessionStorage.getItem(CACHE_KEY)||"null");
+      if(c&&c.j&&(Date.now()-c.ts)<CACHE_TTL){ ingest(c.j); usedCache=true; }
+    }catch(e){}
+  }
+  if(usedCache){
+    // làm mới ngầm, không chặn UI
+    fetch(GAS_URL,{method:"GET",redirect:"follow"}).then(function(r){return r.json();}).then(function(j){
+      try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({ts:Date.now(),j:j}));}catch(e){}
+    }).catch(function(){});
+    return Promise.resolve();
+  }
   showToast(t("loading"),"load");
   return fetch(GAS_URL,{method:"GET",redirect:"follow"}).then(function(r){return r.json();}).then(function(j){
-    if(!j||j.ok===false)throw new Error((j&&j.error)||"GAS error");
-    var raw=j.rows||j.data||[];
-    ROWS=raw.map(normalizeRow).filter(function(r){return r.year>0||r.val>0||r.pcs>0;});
-    buildIndex();
-    computeSegDefaults();
-    if(!S.brand||BRANDS.indexOf(S.brand)<0)S.brand=BRANDS[0]||null;
-    if(!S.vsA||BRANDS.indexOf(S.vsA)<0)S.vsA=BRANDS[0]||null;
-    if(!S.vsB||BRANDS.indexOf(S.vsB)<0)S.vsB=BRANDS[1]||BRANDS[0]||null;
-    var meta=j.meta||{};
-    document.getElementById("src-tx").textContent="Live · "+nf(ROWS.length)+" "+t("unit.lines")+(meta.exported?(" · "+meta.exported):"");
+    ingest(j);
+    try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({ts:Date.now(),j:j}));}catch(e){}
     showToast((LANG==="vi"?"Đã tải ":"Loaded ")+nf(ROWS.length)+" "+t("unit.lines"),"success");
   });
 }
@@ -707,6 +796,40 @@ function rankList(ns,arr,opt){opt=opt||{};RK[ns]=arr;var max=Math.max.apply(null
 }
 function rkClick(ns,i){var a=RK[ns]&&RK[ns][i];if(!a)return;if(RK[ns+"_k"]==="brand"){drillBrand(a.key);return;}if(a.rows)openDrill(a.rows,{title:a.key,sub:RK[ns+"_t"]||""});}
 function insight(ic,title,txt,tone,click){return '<div class="ins '+(tone||"")+'"'+(click?' onclick="'+click.replace(/"/g,"&quot;")+'"':'')+'><div class="ins-ic">'+ic+'</div><div class="ins-bd"><div class="ins-t">'+esc(title)+'</div><div class="ins-x">'+txt+'</div></div></div>';}
+
+/* ⓘ chart-explanation tooltip. key → giải thích ngắn gọn dễ hiểu (VI/EN). */
+var CINFO={
+ "mk.val":["Tổng tiền nhập khẩu theo từng năm (hoặc tháng nếu chọn 1 năm). Cột càng cao = năm đó nhập càng nhiều.","Total import value per year. Taller bar = more imported."],
+ "mk.qty":["Tổng số chiếc nhập theo thời gian. Xem xu hướng tăng/giảm sản lượng.","Total pieces imported over time."],
+ "mk.bp":["Số dòng tờ khai (số lô hàng) và số hãng có mặt mỗi năm — đo mức độ sôi động & cạnh tranh của thị trường.","Declaration lines & number of active brands each year — market activity & competition."],
+ "mk.share":["Miếng bánh mỗi hãng chiếm bao nhiêu % thị trường nhập khẩu. Bấm để lọc riêng hãng đó.","Each brand's slice of the import market. Click to filter."],
+ "mk.evo":["Thị phần các hãng thay đổi thế nào qua từng năm (cột 100%). Nhìn được hãng nào đang lên/xuống.","How brand shares shift year by year (100% stacked)."],
+ "mk.seg":["Chia hàng nhập thành 3 nhóm theo GIÁ MỖI CHIẾC: rẻ / trung bình / cao. Xem tiền đổ vào phân khúc nào nhiều nhất.","Imports split into 3 price tiers by unit price/pc."],
+ "mk.segLeaders":["Trong mỗi nhóm giá, hãng nào đang bán nhiều nhất — kèm đơn giá TB và % của hãng đó trong nhóm.","Top brands within each price tier, with avg price & share."],
+ "mk.topbrand":["Xếp hạng các hãng theo trị giá (hoặc số lượng) nhập. Bấm để xem chi tiết hãng.","Brands ranked by value/qty. Click to drill."],
+ "mk.ptypeMix":["Cơ cấu các loại sản phẩm nhập khẩu — loại nào chiếm tỷ trọng lớn.","Product-type mix of imports."],
+ "mk.priceyear":["Giá trung bình mỗi chiếc của cả thị trường thay đổi qua thời gian — đang đắt lên hay rẻ đi.","Market avg unit price/pc over time."],
+ "mk.heatmap":["Bảng màu: mỗi ô cho biết trong 1 loại SP, hãng đó chiếm bao nhiêu % — màu càng đậm càng mạnh. Bấm ô để xem chi tiết.","Which brand dominates each product type. Darker = stronger."],
+ "mk.brandtbl":["Bảng đầy đủ: số lượng, trị giá, đơn giá TB, thị phần của từng hãng. Bấm dòng để xem chi tiết.","Full brand table. Click a row to drill."],
+ "br.year":["Trị giá (hoặc SL) hãng này nhập theo thời gian. Xem hãng đang tăng trưởng hay chững lại.","This brand's imports over time."],
+ "br.ptype":["Hãng này nhập những loại sản phẩm nào, loại nào là chủ lực.","Which product types this brand imports."],
+ "br.bname":["Trong cùng 1 hãng có nhiều 'Tên nhãn hiệu' (thương hiệu con) khác nhau — biểu đồ này tách ra xem nhãn nào nhập nhiều.","Breakdown by the brand's sub-brand names (BE column)."],
+ "br.price":["So sánh giá/chiếc của hãng này với giá trung bình toàn thị trường — hãng bán đắt hơn hay rẻ hơn mặt bằng.","This brand's unit price vs market average."],
+ "br.toptypes":["Xếp hạng loại SP chủ lực của hãng theo trị giá.","Brand's top product types by value."],
+ "br.origin":["Hàng của hãng này nhập từ những nước nào.","Which countries this brand imports from."],
+ "pr.segShare":["Tỷ trọng 3 nhóm giá (rẻ/TB/cao) trong phạm vi đang lọc.","Share of the 3 price tiers."],
+ "pr.segYear":["3 nhóm giá thay đổi tỷ trọng thế nào qua từng năm (100%).","Price-tier mix over time (100%)."],
+ "pr.byBrand":["Giá trung bình MỖI CHIẾC của từng hãng — hãng nào bán đắt, hãng nào rẻ.","Avg unit price/pc per brand."],
+ "pr.scatter":["Mỗi bong bóng là 1 hãng. Trục ngang = giá/chiếc, trục dọc = số lượng, bong bóng to = trị giá lớn. Góc phải-trên = đắt & bán nhiều.","Bubble = brand. X: price, Y: volume, size: value."],
+ "pr.brandInSeg":["Trong mỗi nhóm giá, những hãng nào đang dẫn đầu.","Leading brands in each price tier."],
+ "vs.year":["So kè trị giá (hoặc SL) 2 hãng qua từng năm.","Two brands' value/qty head-to-head over time."],
+ "vs.price":["So sánh giá/chiếc 2 hãng qua thời gian — ai đắt hơn.","Unit price/pc of the two brands over time."],
+ "vs.ptype":["2 hãng mạnh ở những loại SP nào.","Which product types each brand is strong in."],
+ "vs.origin":["2 hãng nhập từ những nước nào.","Import origins of both brands."],
+ "vs.bname":["So sánh các 'Tên nhãn hiệu' (thương hiệu con) của 2 hãng.","Compare the two brands' sub-brand names."],
+ "vs.share":["2 hãng này chiếm bao nhiêu % so với toàn thị trường.","Both brands' share of the whole market."]
+};
+function cinfo(key){var e=CINFO[key];if(!e)return "";var txt=LANG==="vi"?e[0]:e[1];return '<i class="cinfo">i<span class="cinfo-pop">'+esc(txt)+'</span></i>';}
 function afterRender(secId){setTimeout(function(){var s=document.getElementById(secId);if(!s)return;s.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});animateBars(s);},30);}
 function animateBars(scope){(scope||document).querySelectorAll(".rkb[data-w]").forEach(function(b,i){if(b.dataset.an==="1")return;b.dataset.an="1";b.style.width="0%";void b.offsetWidth;setTimeout(function(){b.style.width=b.dataset.w+"%";},50*Math.min(i,12)+50);});}
 
@@ -734,6 +857,8 @@ function goTab(tb){
   var sbp=document.getElementById("sbp-"+tb);if(sbp)sbp.style.display="block";
   // metric toggle hidden on market (it has per-chart switches)
   document.querySelector(".useg").style.display=(tb==="market"||tb==="price")?"none":"flex";
+  // LAZY: nếu tab này chưa render kể từ lần đổi filter gần nhất → render bây giờ
+  if(typeof _dirty!=="undefined" && _dirty[tb]){try{renderTab(tb);}catch(e){console.warn(tb,e);}}
   if(sec){sec.querySelectorAll(".rkb[data-w]").forEach(function(el){el.dataset.an="0";});sec.querySelectorAll(".reveal").forEach(function(el){el.classList.remove("in");});setTimeout(function(){sec.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});animateBars(sec);},50);}
   setTimeout(function(){Object.keys(S.charts).forEach(function(k){try{S.charts[k].resize();}catch(e){}});},90);
 }
@@ -825,30 +950,106 @@ function segInput(which,el){var v=toNum(el.value)/FX[S.currency];if(!isFinite(v)
 function segReset(){S.segThresh={low:S.segDefaults.low,high:S.segDefaults.high};try{localStorage.setItem("mmh_imp_seg",JSON.stringify(S.segThresh));}catch(e){}renderAll();}
 
 /* Build each tab's sidebar */
+function typeCounts(){var m={};ROWS.forEach(function(r){m[r.ptype]=(m[r.ptype]||0)+1;});return m;}
+function originCounts(){var m={};ROWS.forEach(function(r){m[r.origin]=(m[r.origin]||0)+1;});return m;}
 function buildSidebars(){
-  // Market: type + origin + price slider + segment editor
+  // Market: smart-search Type + Origin  (giá & phân khúc chuyển lên toolbar trên cao)
   document.getElementById("mk-ctrl").innerHTML=
-    chipGroup(t("sb.ptype"),"mkType",PTYPES,"renderAll",t("ptype.ALL"))
-    +'<div class="sb-divx"></div>'+chipGroup(t("sb.origin"),"mkOrigin",ORIGINS.slice(0,8),"renderAll",t("origin.ALL"))
-    +'<div class="sb-divx"></div>'+priceSliderHtml()
-    +'<div class="sb-divx"></div>'+segEditorHtml();
-  // Brand: brand select + type
+    smartSearch("mkType",t("sb.ptype"),PTYPES,typeCounts(),t("ptype.ALL"))
+    +'<div class="sb-divx"></div>'+smartSearch("mkOrigin",t("sb.origin"),ORIGINS,originCounts(),t("origin.ALL"));
+  // Brand: brand select + type smart search
   document.getElementById("br-ctrl").innerHTML=
     selGroup(t("sb.brand"),"brand",BRANDS,"renderBrand")
-    +'<div class="sb-divx"></div>'+chipGroup(t("sb.ptype"),"brType",PTYPES,"renderAll",t("ptype.ALL"));
-  // Price: type filter + price slider + segment editor
+    +'<div class="sb-divx"></div>'+smartSearch("brType",t("sb.ptype"),PTYPES,typeCounts(),t("ptype.ALL"));
+  // Price: type smart search (giá & phân khúc trên toolbar)
   document.getElementById("pr-ctrl").innerHTML=
-    chipGroup(t("sb.ptype"),"prType",PTYPES,"renderAll",t("ptype.ALL"))
-    +'<div class="sb-divx"></div>'+priceSliderHtml()
-    +'<div class="sb-divx"></div>'+segEditorHtml();
-  // VS: brand A/B + type + group(of brand for brandname compare)
+    smartSearch("prType",t("sb.ptype"),PTYPES,typeCounts(),t("ptype.ALL"));
+  // VS: brand A/B + type
   document.getElementById("vs-ctrl").innerHTML=
     selGroup(t("sb.brandA"),"vsA",BRANDS,"renderVS")
     +selGroup(t("sb.brandB"),"vsB",BRANDS,"renderVS")
-    +'<div class="sb-divx"></div>'+chipGroup(t("sb.ptype"),"vsType",PTYPES,"renderAll",t("ptype.ALL"));
-  // paint slider positions
-  setTimeout(prPaint,10);
+    +'<div class="sb-divx"></div>'+smartSearch("vsType",t("sb.ptype"),PTYPES,typeCounts(),t("ptype.ALL"));
 }
+
+/* ===== SMART SEARCH combobox (Type / Origin) ===== */
+var _SSDATA={};
+function smartSearch(stateKey,label,options,counts,allLabel){
+  _SSDATA[stateKey]={options:options,counts:counts||{},allLabel:allLabel||t("all")};
+  var cur=S[stateKey]||"ALL";
+  var curLbl=cur==="ALL"?(allLabel||t("all")):cur;
+  return '<span class="cl">'+esc(label)+'</span>'
+    +'<div class="smart" id="ss-'+stateKey+'">'
+    +'<span class="sic">🔎</span>'
+    +'<input class="smart-inp" id="ssinp-'+stateKey+'" placeholder="'+(LANG==="vi"?"Gõ để tìm…":"Type to search…")+'" '
+    +'oninput="ssFilter(\''+stateKey+'\')" onfocus="ssOpen(\''+stateKey+'\')" onkeydown="ssKey(event,\''+stateKey+'\')" autocomplete="off">'
+    +'<button class="sclr" onclick="ssClear(\''+stateKey+'\')" title="Xóa">✕</button>'
+    +'<div class="smart-menu" id="ssmenu-'+stateKey+'"></div>'
+    +'</div>'
+    +'<div class="smart-cur">'+(LANG==="vi"?"Đang chọn:":"Selected:")+' <b id="sscur-'+stateKey+'">'+esc(curLbl)+'</b></div>';
+}
+function ssRender(stateKey,q){
+  var d=_SSDATA[stateKey];if(!d)return;
+  q=(q||"").toLowerCase().trim();
+  var opts=[{k:"ALL",lbl:d.allLabel,c:ROWS.length}].concat(d.options.map(function(o){return {k:o,lbl:o,c:d.counts[o]||0};}));
+  var filtered=opts.filter(function(o){return !q||o.lbl.toLowerCase().indexOf(q)>=0;}).slice(0,60);
+  var cur=S[stateKey]||"ALL";
+  var menu=document.getElementById("ssmenu-"+stateKey);if(!menu)return;
+  menu.innerHTML=filtered.map(function(o,i){return '<div class="smart-opt'+(o.k===cur?" sel":"")+'" data-k="'+esc(o.k)+'" onmousedown="ssPick(\''+stateKey+'\',this)" data-i="'+i+'">'+esc(o.lbl)+'<span class="cnt">'+nf(o.c)+'</span></div>';}).join("")||'<div class="smart-opt" style="cursor:default;color:var(--t3)">'+(LANG==="vi"?"Không thấy":"No match")+'</div>';
+}
+function ssOpen(stateKey){ssRender(stateKey,document.getElementById("ssinp-"+stateKey).value);document.getElementById("ssmenu-"+stateKey).classList.add("on");}
+function ssClose(stateKey){var m=document.getElementById("ssmenu-"+stateKey);if(m)m.classList.remove("on");}
+function ssFilter(stateKey){ssRender(stateKey,document.getElementById("ssinp-"+stateKey).value);document.getElementById("ssmenu-"+stateKey).classList.add("on");}
+function ssPick(stateKey,el){var k=el.getAttribute("data-k");S[stateKey]=k;var d=_SSDATA[stateKey];var lbl=k==="ALL"?d.allLabel:k;var cur=document.getElementById("sscur-"+stateKey);if(cur)cur.textContent=lbl;var inp=document.getElementById("ssinp-"+stateKey);if(inp)inp.value="";ssClose(stateKey);renderAll();}
+function ssClear(stateKey){S[stateKey]="ALL";var inp=document.getElementById("ssinp-"+stateKey);if(inp)inp.value="";var d=_SSDATA[stateKey];var cur=document.getElementById("sscur-"+stateKey);if(cur)cur.textContent=d.allLabel;ssClose(stateKey);renderAll();}
+function ssKey(ev,stateKey){var menu=document.getElementById("ssmenu-"+stateKey);if(!menu)return;var opts=menu.querySelectorAll(".smart-opt");var hl=menu.querySelector(".smart-opt.hl");var idx=hl?+hl.getAttribute("data-i"):-1;if(ev.key==="ArrowDown"){ev.preventDefault();idx=Math.min(opts.length-1,idx+1);}else if(ev.key==="ArrowUp"){ev.preventDefault();idx=Math.max(0,idx-1);}else if(ev.key==="Enter"){ev.preventDefault();if(hl)ssPick(stateKey,hl);return;}else if(ev.key==="Escape"){ssClose(stateKey);return;}else return;opts.forEach(function(o){o.classList.remove("hl");});if(opts[idx]){opts[idx].classList.add("hl");opts[idx].scrollIntoView({block:"nearest"});}}
+document.addEventListener("click",function(e){if(!e.target.closest(".smart"))document.querySelectorAll(".smart-menu.on").forEach(function(m){m.classList.remove("on");});});
+
+/* ===== PRICE TOOLBAR (thanh set giá trên cao) ===== */
+var _ptOpen=false;
+function priceToolbarHtml(){
+  var b=S.priceBounds||{min:0,max:1};
+  if(!S.priceRange)S.priceRange={min:b.min,max:b.max};
+  var th=segThreshActive();
+  var active=S.priceRange&&(S.priceRange.min>b.min+1e-9||S.priceRange.max<b.max-1e-9);
+  var curTxt=active?(uprice(S.priceRange.min)+" – "+uprice(S.priceRange.max)+"/"+t("unit.pcs")):(LANG==="vi"?"Toàn bộ khoảng giá":"Full price range");
+  return '<div class="ptbar'+(_ptOpen?" open":"")+'" id="ptbar">'
+    +'<div class="ptbar-head" onclick="ptToggle()">'
+      +'<span class="ic">💰</span><span class="ttl">'+(LANG==="vi"?"Bộ lọc giá & phân khúc":"Price filter & segments")+'</span>'
+      +'<span class="sm">'+(LANG==="vi"?"— đơn giá mỗi chiếc":"— unit price per piece")+'</span>'
+      +'<span class="cur">'+esc(curTxt)+'</span><span class="arw">▼</span>'
+    +'</div>'
+    +'<div class="ptbar-body"><div class="ptbar-grid">'
+      // LEFT: price range slider
+      +'<div class="ptbar-col">'
+        +'<div class="lbl">🎚 '+(LANG==="vi"?"Lọc theo khoảng đơn giá/chiếc":"Filter by unit-price/pc range")+'</div>'
+        +'<div class="expl">'+(LANG==="vi"
+            ?'Kéo 2 nút để chỉ xem hàng có <b>giá mỗi chiếc</b> nằm trong khoảng. Đơn giá/chiếc = <b>Đơn giá khai báo ÷ Số chiếc mỗi hộp</b>. Ví dụ: kéo về <b>0 – $1</b> để xem hàng giá rẻ; kéo <b>$5+</b> để xem hàng cao cấp.'
+            :'Drag the two handles to keep only items whose <b>price per piece</b> falls in range. Unit price/pc = <b>Declared price ÷ Pcs per box</b>.')+'</div>'
+        +'<div class="drs" id="pr-slider"><div class="trk"></div><div class="fl" id="pr-fl"></div><div class="hd h1" id="pr-h1" onpointerdown="prDown(event,1)"></div><div class="hd h2" id="pr-h2" onpointerdown="prDown(event,2)"></div></div>'
+        +'<div class="seg-th-row"><div class="seg-th"><label>'+(LANG==="vi"?"Từ":"Min")+' ('+S.currency+'/'+t("unit.pcs")+')</label><input id="pr-min" onchange="prInput(1,this)"></div>'
+        +'<div class="seg-th"><label>'+(LANG==="vi"?"Đến":"Max")+'</label><input id="pr-max" onchange="prInput(2,this)"></div>'
+        +'<div class="seg-th" style="flex:0 0 auto;display:flex;align-items:flex-end"><button class="linkbtn" onclick="prReset()">↺ '+(LANG==="vi"?"Bỏ lọc":"Clear")+'</button></div></div>'
+      +'</div>'
+      // RIGHT: segment thresholds
+      +'<div class="ptbar-col">'
+        +'<div class="lbl">📊 '+(LANG==="vi"?"Ngưỡng phân khúc giá (Thấp / TB / Cao)":"Price-tier thresholds")+'</div>'
+        +'<div class="expl">'+(LANG==="vi"
+            ?'Chia hàng thành 3 nhóm theo giá/chiếc để các biểu đồ phân khúc dùng chung. <b>Tự động</b> = chia theo phân vị 33%/66%. <b>Tùy chỉnh</b> = bạn tự đặt 2 mốc.'
+            :'Split items into 3 tiers by unit price. <b>Auto</b> = 33/66 percentile. <b>Custom</b> = set your own.')+'</div>'
+        +'<div class="segbtns"><button class="'+(S.segMode==="auto"?"on":"")+'" onclick="segSetMode(\'auto\')">'+t("seg.auto")+'</button><button class="'+(S.segMode==="custom"?"on":"")+'" onclick="segSetMode(\'custom\')">'+t("seg.custom")+'</button></div>'
+        +(S.segMode==="custom"
+          ?'<div class="seg-th-row"><div class="seg-th"><label>'+t("seg.low")+' &lt; ('+S.currency+')</label><input id="seg-low" onchange="segInput(1,this)" value="'+(Math.round(toCur(th.low)*1000)/1000)+'"></div><div class="seg-th"><label>'+t("seg.high")+' ≥</label><input id="seg-high" onchange="segInput(2,this)" value="'+(Math.round(toCur(th.high)*1000)/1000)+'"></div><div class="seg-th" style="flex:0 0 auto;display:flex;align-items:flex-end"><button class="linkbtn" onclick="segReset()">↺ '+t("seg.reset")+'</button></div></div>'
+          :'')
+        +'<div class="seg-pills">'
+          +'<div class="seg-pill" style="background:'+SEG_COLOR.Low+'">'+t("seg.low")+'<small>&lt; '+uprice(th.low)+'</small></div>'
+          +'<div class="seg-pill" style="background:'+SEG_COLOR.Mid+'">'+t("seg.mid")+'<small>'+uprice(th.low)+' – '+uprice(th.high)+'</small></div>'
+          +'<div class="seg-pill" style="background:'+SEG_COLOR.High+'">'+t("seg.high")+'<small>≥ '+uprice(th.high)+'</small></div>'
+        +'</div>'
+      +'</div>'
+    +'</div></div></div>';
+}
+function ptToggle(){_ptOpen=!_ptOpen;var el=document.getElementById("ptbar");if(el){el.classList.toggle("open",_ptOpen);if(_ptOpen)setTimeout(prPaint,20);}}
+function mountPriceToolbar(containerId){var c=document.getElementById(containerId);if(!c)return;var host=document.createElement("div");host.innerHTML=priceToolbarHtml();c.insertBefore(host.firstChild,c.firstChild);if(_ptOpen)setTimeout(prPaint,20);}
 </script>
 <script>
 /* ════════════════ MARKET-TAB chart view switch (Value/Qty at chart) ════════════════ */
@@ -893,7 +1094,8 @@ function renderMarket(){
   ins+=insight("💎",t("seg.high"),(LANG==="vi"?"Phân khúc giá cao chiếm ":"High-price segment = ")+'<b>'+pct(hiSh)+'</b> '+(LANG==="vi"?"trị giá":"of value"),"");
   ins+=insight("💰",t("kpi.avgprice"),'<b>'+money(avgP)+'</b>/'+t("unit.pcs")+' · '+nf(R.length)+' '+t("unit.lines"),"");
 
-  var H='<div class="ins-strip reveal in">'+ins+'</div>';
+  var H=priceToolbarHtml();
+  H+='<div class="ins-strip reveal in">'+ins+'</div>';
 
   /* KPI row */
   H+='<div class="kr">'
@@ -905,19 +1107,19 @@ function renderMarket(){
 
   /* GROUP 1 — time series (trị giá · SL · dòng TK+hãng) cạnh nhau */
   H+='<div class="g3">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.valyear")+'</div>'+cvswHtml("val")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-val"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.qtyyear")+'</div>'+cvswHtml("qty")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-qty"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.bpyear")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-bp"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.valyear")+cinfo("mk.val")+'</div>'+cvswHtml("val")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-val"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.qtyyear")+cinfo("mk.qty")+'</div>'+cvswHtml("qty")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-qty"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.bpyear")+cinfo("mk.bp")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-bp"></canvas></div></div></div>'
     +'</div>';
 
   /* GROUP 2 — market share giữa các hãng + evolution cạnh nhau */
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.share")+'</div><div class="cs">'+metricLabel()+' · '+(LANG==="vi"?"top 10 + còn lại":"top 10 + others")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-share"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.evo")+'</div>'+cvswHtml("evo")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-evo"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.share")+cinfo("mk.share")+'</div><div class="cs">'+metricLabel()+' · '+(LANG==="vi"?"top 10 + còn lại":"top 10 + others")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-share"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.evo")+cinfo("mk.evo")+'</div>'+cvswHtml("evo")+'</div><div class="cb"><div class="cw t"><canvas id="c-mk-evo"></canvas></div></div></div>'
     +'</div>';
 
   /* GROUP 3 — phân khúc giá: donut + leaders per segment */
-  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("card.segByPrice")+' & '+t("card.segLeaders")+'</div><div class="cs">'+t("seg.note")+' · '+t("seg.low")+' &lt; '+money(segThreshActive().low)+' · '+t("seg.high")+' ≥ '+money(segThreshActive().high)+'</div></div><div class="cb"><div class="tier-layout">'
+  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("card.segByPrice")+' & '+t("card.segLeaders")+cinfo("mk.seg")+'</div><div class="cs">'+t("seg.note")+' · '+t("seg.low")+' &lt; '+money(segThreshActive().low)+' · '+t("seg.high")+' ≥ '+money(segThreshActive().high)+'</div></div><div class="cb"><div class="tier-layout">'
     +'<div class="tier-donut"><div class="cw" style="height:280px"><canvas id="c-mk-seg"></canvas></div></div>'
     +'<div class="tier-leaders"><div class="tlgrid">'
       +'<div><div class="tl-hd" style="color:'+SEG_COLOR.High+'">'+t("seg.high")+'</div><div class="cw tlbar"><canvas id="c-mk-segH"></canvas></div></div>'
@@ -928,18 +1130,19 @@ function renderMarket(){
 
   /* GROUP 4 — top brands + ptype mix + price trend cạnh nhau */
   H+='<div class="g3">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.topbrand")+'</div><div class="hint">'+t("hint.clickbrand")+'</div></div><div class="cb" id="mk-topbrand"></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.ptypeMix")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-ptype"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.priceyear")+'</div><div class="cs">'+S.currency+'/'+t("unit.pcs")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-price"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.topbrand")+cinfo("mk.topbrand")+'</div><div class="hint">'+t("hint.clickbrand")+'</div></div><div class="cb" id="mk-topbrand"></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.ptypeMix")+cinfo("mk.ptypeMix")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-ptype"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("card.priceyear")+cinfo("mk.priceyear")+'</div><div class="cs">'+S.currency+'/'+t("unit.pcs")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-mk-price"></canvas></div></div></div>'
     +'</div>';
 
   /* GROUP 5 — heatmap */
   H+=mkHeatmapCard(R);
 
   /* GROUP 6 — brand table */
-  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("card.brandtbl")+'</div><div class="cs">'+nBrand+' '+t("th.brand").toLowerCase()+'</div><button class="dl-btn" onclick="exportTable(\'t-mk-brand\',\'brand_share\')">⬇ CSV</button></div><div class="cb" style="padding:0"><div class="tw" id="t-mk-brand">'+brandTable(bAggV,totV,totP)+'</div></div></div>';
+  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("card.brandtbl")+cinfo("mk.brandtbl")+'</div><div class="cs">'+nBrand+' '+t("th.brand").toLowerCase()+'</div><button class="dl-btn" onclick="exportTable(\'t-mk-brand\',\'brand_share\')">⬇ CSV</button></div><div class="cb" style="padding:0"><div class="tw" id="t-mk-brand">'+brandTable(bAggV,totV,totP)+'</div></div></div>';
 
   document.getElementById("mk-body").innerHTML=H;
+  if(_ptOpen)setTimeout(prPaint,20);
 
   /* ===== CHARTS ===== */
   var bk=mkBuckets();
@@ -989,7 +1192,7 @@ function renderMarket(){
 
   // avg price trend
   var priceByBucket=st.map(function(s){var v=0,p=0;s.rows.forEach(function(r){v+=r.val;p+=r.pcs;});return p?Math.round(toCur(v/p)*1000)/1000:0;});
-  lineChart("c-mk-price",labels,[{label:t("kpi.avgprice"),data:priceByBucket,borderColor:"#E6B800",backgroundColor:hexA("#FFE100",.15),fill:true,tension:.3,borderWidth:3,pointRadius:3,pointBackgroundColor:"#E6B800"}],function(v){return curSym()+nf(v);});
+  lineChart("c-mk-price",labels,[{label:t("kpi.avgprice"),data:priceByBucket,borderColor:"#E6B800",backgroundColor:hexA("#FFE100",.15),fill:true,tension:.3,borderWidth:3,pointRadius:3,pointBackgroundColor:"#E6B800"}],function(v){return uprFmt(v);});
 
   // brand table bars
   setTimeout(function(){afterRender("sec-market");},10);
@@ -1040,7 +1243,7 @@ function mkHeatmapCard(R){
   brands.forEach(function(b){h+='<div class="hh" title="'+esc(b)+'">'+esc(b.length>10?b.slice(0,9)+"…":b)+'</div>';});
   pAgg.forEach(function(a,pi){var p=a.key;var rowTot=(hv?a.val:a.pcs)||1;h+='<div class="hr" title="'+esc(p)+'">'+esc(p)+'</div>';brands.forEach(function(b,bi){var q=cell[p+"||"+b]||0,sh=q/rowTot*100,isM=isMani(b);var al=q?Math.min(.92,.14+sh/100*.82):0;var bg=q?(isM?hexA("#E8C800",al):hexA("#3A5CAA",al)):"";var fg=(!isM&&sh>48)?"#fff":(isM?"#003047":"var(--t1)");if(!q)fg="var(--t3)";var tt=hv?money(q):(nf(q)+" "+t("unit.pcs"));h+='<div class="hc" style="'+(bg?("background:"+bg+";"):"")+'color:'+fg+'" onclick="hmDrill('+pi+','+bi+')" title="'+esc(b)+' @ '+esc(p)+' · '+tt+' ('+sh.toFixed(1)+'%)">'+(q?sh.toFixed(0)+"%":"·")+'</div>';});});
   h+='</div><div class="hm-lg"><span class="sw"></span> '+(LANG==="vi"?"thị phần hãng trong loại SP":"brand share within type")+'<span class="sw swy" style="margin-left:10px"></span> Mani · '+(LANG==="vi"?"bấm ô để xem chi tiết":"click cell to drill")+'</div>';
-  return '<div class="card reveal"><div class="ch"><div class="ct">'+t("card.heatmap")+'</div><div class="cs">'+(LANG==="vi"?"top ":"top ")+pAgg.length+' '+t("dk.ptype").toLowerCase()+' × top '+brands.length+' '+t("th.brand").toLowerCase()+' · % = '+(hv?t("metric.val"):t("metric.qty"))+'</div></div><div class="cb hm-wrap">'+h+'</div></div>';
+  return '<div class="card reveal"><div class="ch"><div class="ct">'+t("card.heatmap")+cinfo("mk.heatmap")+'</div><div class="cs">'+(LANG==="vi"?"top ":"top ")+pAgg.length+' '+t("dk.ptype").toLowerCase()+' × top '+brands.length+' '+t("th.brand").toLowerCase()+' · % = '+(hv?t("metric.val"):t("metric.qty"))+'</div></div><div class="cb hm-wrap">'+h+'</div></div>';
 }
 function hmDrill(pi,bi){var H=window._HM;if(!H)return;var p=H.ptypes[pi],b=H.brands[bi];var rows=filterRows({ptype:p,brand:b,origin:S.mkOrigin});if(!rows.length){showToast(LANG==="vi"?"Không có dòng nào":"No line items","warn");return;}openDrill(rows,{title:b+" · "+p,sub:t("card.heatmap")});}
 
@@ -1069,14 +1272,14 @@ function renderBrand(){
     +kpiCard({lbl:t("dk.brandname"),val:Object.keys(aggBy(BR,function(r){return r.brandname;})).length,mode:"n",note:Object.keys(aggBy(BR,function(r){return r.ptype;})).length+" "+t("dk.ptype").toLowerCase()});
 
   var H='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byyear")+'</div><div class="cs">'+metricLabel()+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-year"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byptype")+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-ptype"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byyear")+cinfo("br.year")+'</div><div class="cs">'+metricLabel()+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-year"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byptype")+cinfo("br.ptype")+'</div><div class="cs">'+(LANG==="vi"?"Hãng này nhập nhiều loại SP nào nhất":"Top product types for this brand")+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-ptype"></canvas></div></div></div></div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.bybrandname")+'</div><div class="cs">'+(LANG==="vi"?"Cơ cấu theo Tên nhãn hiệu (BE)":"By Brand name (BE)")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-br-bname"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("br.pricecmp")+'</div><div class="cs">'+(LANG==="vi"?"Đơn giá/chiếc hãng vs thị trường":"Brand vs market unit price")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-br-price"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.bybrandname")+cinfo("br.bname")+'</div><div class="cs">'+(LANG==="vi"?"Cơ cấu theo Tên nhãn hiệu (BE)":"By Brand name (BE)")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-br-bname"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("br.pricecmp")+cinfo("br.price")+'</div><div class="cs">'+(LANG==="vi"?"Đơn giá/chiếc hãng vs thị trường":"Brand vs market unit price")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-br-price"></canvas></div></div></div></div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("br.toptypes")+' '+esc(S.brand)+'</div></div><div class="cb" id="br-toptypes"></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byorigin")+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-origin"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("br.toptypes")+' '+esc(S.brand)+cinfo("br.toptypes")+'</div><div class="cs">'+(LANG==="vi"?"Xếp hạng loại SP theo trị giá nhập":"Product types ranked by value")+'</div></div><div class="cb" id="br-toptypes"></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+esc(S.brand)+' · '+t("br.byorigin")+cinfo("br.origin")+'</div><div class="cs">'+(LANG==="vi"?"Hàng của hãng nhập từ nước nào":"Which countries this brand imports from")+'</div></div><div class="cb"><div class="cw"><canvas id="c-br-origin"></canvas></div></div></div></div>';
   document.getElementById("br-body").innerHTML=H;
 
   var ys=activeYears();var bk=ys.length===1?(function(){var arr=[];for(var m=1;m<=12;m++){var key=(m<10?"0":"")+m+"/"+ys[0];arr.push({label:"T"+m,match:(function(k){return function(r){return r.month===k;};})(key)});}return arr;})():ys.map(function(y){return {label:String(y),match:(function(yr){return function(r){return r.year===yr;};})(y)};});
@@ -1088,7 +1291,7 @@ function renderBrand(){
   barChart("c-br-bname",{labels:bnAgg.map(function(a){return a.key.length>22?a.key.slice(0,21)+"…":a.key;}),datasets:[{label:metricLabel(),data:bnAgg.map(function(a){return MV(a);}),backgroundColor:bnAgg.map(function(a,i){return CAT_COLORS[i%CAT_COLORS.length];}),borderRadius:5,datalabels:{display:true,anchor:"end",align:"end",color:axisColor(),font:{family:FF,size:10,weight:"700"},formatter:function(v){return mval(v);}}}],horizontal:true,legend:false,fmt:mval,padTop:6,padRight:70,onClick:function(i){openDrill(bnAgg[i].rows,{title:S.brand+" · "+bnAgg[i].key,sub:t("br.bybrandname")});}});
   var brPrice=bk.map(function(b){var rr=BR.filter(b.match);var v=0,p=0;rr.forEach(function(r){v+=r.val;p+=r.pcs;});return p?Math.round(toCur(v/p)*1000)/1000:0;});
   var mkPrice=bk.map(function(b){var rr=R.filter(b.match);var v=0,p=0;rr.forEach(function(r){v+=r.val;p+=r.pcs;});return p?Math.round(toCur(v/p)*1000)/1000:0;});
-  lineChart("c-br-price",labels,[{label:esc(S.brand),data:brPrice,borderColor:isMani(S.brand)?"#E6B800":"#3A5CAA",fill:false,tension:.3,borderWidth:3,pointRadius:3},{label:LANG==="vi"?"Thị trường":"Market",data:mkPrice,borderColor:"#94A3B8",borderDash:[6,4],fill:false,tension:.3,borderWidth:2,pointRadius:2}],function(v){return curSym()+nf(v);});
+  lineChart("c-br-price",labels,[{label:esc(S.brand),data:brPrice,borderColor:isMani(S.brand)?"#E6B800":"#3A5CAA",fill:false,tension:.3,borderWidth:3,pointRadius:3},{label:LANG==="vi"?"Thị trường":"Market",data:mkPrice,borderColor:"#94A3B8",borderDash:[6,4],fill:false,tension:.3,borderWidth:2,pointRadius:2}],function(v){return uprFmt(v);});
   document.getElementById("br-toptypes").innerHTML=rankList("brtype",pAgg,{valFn:function(a){return MV(a);},colorFn:function(a){return CAT_COLORS[PTYPES.indexOf(a.key)%CAT_COLORS.length];},labelFn:function(a){return a.key.length>26?a.key.slice(0,25)+"…":a.key;},fmtFn:function(v){return mval(v);},subFn:function(a){return a.n+" "+t("unit.lines");}});
   var oAgg=sortDesc(toArr(aggBy(BR,function(r){return r.origin;})),"val").slice(0,8);
   barChart("c-br-origin",{labels:oAgg.map(function(a){return a.key.length>18?a.key.slice(0,17)+"…":a.key;}),datasets:[{label:metricLabel(),data:oAgg.map(function(a){return MV(a);}),backgroundColor:oAgg.map(function(a,i){return CAT_COLORS[i%CAT_COLORS.length];}),borderRadius:5,datalabels:{display:true,anchor:"end",align:"end",color:axisColor(),font:{family:FF,size:10,weight:"700"},formatter:function(v){return mval(v);}}}],horizontal:true,legend:false,fmt:mval,padTop:6,padRight:70,onClick:function(i){openDrill(oAgg[i].rows,{title:S.brand+" · "+oAgg[i].key,sub:t("br.byorigin")});}});
@@ -1103,24 +1306,26 @@ function renderPrice(){
   var segAgg={Low:{val:0,pcs:0,rows:[]},Mid:{val:0,pcs:0,rows:[]},High:{val:0,pcs:0,rows:[]}};
   R.forEach(function(r){var s=segOf(r.uprice);segAgg[s].val+=r.val;segAgg[s].pcs+=r.pcs;segAgg[s].rows.push(r);});
   var totV=R.reduce(function(s,r){return s+r.val;},0),totP=R.reduce(function(s,r){return s+r.pcs;},0);
-  var H='<div class="kr">'
+  var H=priceToolbarHtml();
+  H+='<div class="kr">'
     +kpiCard({lbl:t("seg.high")+" · "+t("th.value"),val:segAgg.High.val,mode:"vnd",cls:"",note:pct(totV?segAgg.High.val/totV*100:0)+" · ≥ "+money(th.high)})
     +kpiCard({lbl:t("seg.mid")+" · "+t("th.value"),val:segAgg.Mid.val,mode:"vnd",cls:"y",note:pct(totV?segAgg.Mid.val/totV*100:0)})
     +kpiCard({lbl:t("seg.low")+" · "+t("th.value"),val:segAgg.Low.val,mode:"vnd",cls:"pos",note:pct(totV?segAgg.Low.val/totV*100:0)+" · &lt; "+money(th.low)})
     +kpiCard({lbl:t("kpi.avgprice"),val:totP?totV/totP:0,mode:"vnd",note:money(totP?totV/totP:0)+"/"+t("unit.pcs")})
     +'</div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.segShare")+'</div><div class="cs">'+metricLabel()+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-seg"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.segByYear")+'</div><div class="cs">'+(LANG==="vi"?"100% chồng theo thời gian":"100% stacked over time")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-segyear"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.segShare")+cinfo("pr.segShare")+'</div><div class="cs">'+metricLabel()+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-seg"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.segByYear")+cinfo("pr.segYear")+'</div><div class="cs">'+(LANG==="vi"?"100% chồng theo thời gian":"100% stacked over time")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-segyear"></canvas></div></div></div></div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.byBrand")+'</div><div class="cs">'+(LANG==="vi"?"Đơn giá/chiếc TB · top hãng":"Avg unit price · top brands")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-bybrand"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.scatter")+'</div><div class="cs">'+(LANG==="vi"?"X: đơn giá/chiếc · Y: sản lượng":"X: unit price · Y: volume")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-scatter"></canvas></div></div></div></div>';
-  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.brandInSeg")+'</div><div class="cs">'+t("seg.note")+'</div></div><div class="cb"><div class="tlgrid">'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.byBrand")+cinfo("pr.byBrand")+'</div><div class="cs">'+(LANG==="vi"?"Đơn giá/chiếc TB · top hãng":"Avg unit price · top brands")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-bybrand"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.scatter")+cinfo("pr.scatter")+'</div><div class="cs">'+(LANG==="vi"?"X: đơn giá/chiếc · Y: sản lượng":"X: unit price · Y: volume")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-pr-scatter"></canvas></div></div></div></div>';
+  H+='<div class="card reveal"><div class="ch"><div class="ct">'+t("pr.brandInSeg")+cinfo("pr.brandInSeg")+'</div><div class="cs">'+t("seg.note")+'</div></div><div class="cb"><div class="tlgrid">'
     +'<div><div class="tl-hd" style="color:'+SEG_COLOR.High+'">'+t("seg.high")+'</div><div class="cw tlbar"><canvas id="c-pr-segH"></canvas></div></div>'
     +'<div><div class="tl-hd" style="color:'+SEG_COLOR.Mid+'">'+t("seg.mid")+'</div><div class="cw tlbar"><canvas id="c-pr-segM"></canvas></div></div>'
     +'<div><div class="tl-hd" style="color:'+SEG_COLOR.Low+'">'+t("seg.low")+'</div><div class="cw tlbar"><canvas id="c-pr-segL"></canvas></div></div>'
     +'</div></div></div>';
   document.getElementById("pr-body").innerHTML=H;
+  if(_ptOpen)setTimeout(prPaint,20);
 
   var segArr=["High","Mid","Low"];
   donutChart("c-pr-seg",[t("seg.high"),t("seg.mid"),t("seg.low")],segArr.map(function(k){return MV(segAgg[k]);}),[SEG_COLOR.High,SEG_COLOR.Mid,SEG_COLOR.Low],{fmt:function(v){return S.metric==="val"?money(v):qf(v);},legendPos:"bottom",onClick:function(i){var k=segArr[i];openDrill(segAgg[k].rows,{title:t("seg."+k.toLowerCase()),sub:t("pr.segShare")});}});
@@ -1128,10 +1333,10 @@ function renderPrice(){
   killC("c-pr-segyear");
   S.charts["c-pr-segyear"]=new Chart(document.getElementById("c-pr-segyear"),{type:"bar",data:{labels:ys,datasets:segArr.map(function(k){return {label:t("seg."+k.toLowerCase()),data:ys.map(function(y){var rr=R.filter(function(r){return r.year===y&&segOf(r.uprice)===k;});var tot=R.filter(function(r){return r.year===y;}).reduce(function(s,r){return s+MV(r);},0);var v=rr.reduce(function(s,r){return s+MV(r);},0);return tot?+(v/tot*100).toFixed(1):0;}),backgroundColor:SEG_COLOR[k],stack:"s",datalabels:{display:true,color:"#fff",font:{family:FF,size:10,weight:"800"},formatter:function(v){return v>=6?v.toFixed(0)+"%":"";}}};})},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{legend:{position:"bottom",labels:{font:{family:FF,size:11},boxWidth:12,padding:9,color:axisColor()}},datalabels:{},tooltip:{callbacks:{label:function(c){return " "+c.dataset.label+": "+c.parsed.y+"%";}}}},scales:{x:{stacked:true,grid:{display:false},ticks:{font:{family:FF,size:11},color:axisColor()}},y:{stacked:true,max:100,grid:{color:gridColor()},ticks:{font:{family:FF,size:11},color:axisColor(),callback:function(v){return v+"%";}}}},layout:{padding:{top:6,right:8}}}});
   var bAgg=sortDesc(toArr(aggBy(R,function(r){return r.brand;})),"pcs").slice(0,14);
-  barChart("c-pr-bybrand",{labels:bAgg.map(function(a){return a.key.length>16?a.key.slice(0,15)+"…":a.key;}),datasets:[{label:t("kpi.avgprice"),data:bAgg.map(function(a){return a.pcs?Math.round(toCur(a.val/a.pcs)*1000)/1000:0;}),backgroundColor:bAgg.map(function(a){return brandColor(a.key);}),borderRadius:5,datalabels:{display:true,anchor:"end",align:"end",color:axisColor(),font:{family:FF,size:10,weight:"700"},formatter:function(v){return v?curSym()+nf(v):"";}}}],horizontal:true,legend:false,fmt:function(v){return curSym()+nf(v);},padTop:6,padRight:70,onClick:function(i){openDrill(bAgg[i].rows,{title:bAgg[i].key,sub:t("pr.byBrand")});}});
+  barChart("c-pr-bybrand",{labels:bAgg.map(function(a){return a.key.length>16?a.key.slice(0,15)+"…":a.key;}),datasets:[{label:t("kpi.avgprice"),data:bAgg.map(function(a){return a.pcs?Math.round(toCur(a.val/a.pcs)*1000)/1000:0;}),backgroundColor:bAgg.map(function(a){return brandColor(a.key);}),borderRadius:5,datalabels:{display:true,anchor:"end",align:"end",color:axisColor(),font:{family:FF,size:10,weight:"700"},formatter:function(v){return v?uprFmt(v):"";}}}],horizontal:true,legend:false,fmt:function(v){return uprFmt(v);},padTop:6,padRight:70,onClick:function(i){openDrill(bAgg[i].rows,{title:bAgg[i].key,sub:t("pr.byBrand")});}});
   var scatterData=bAgg.map(function(a){var up=a.pcs?a.val/a.pcs:0;return {x:Math.round(toCur(up)*1000)/1000,y:a.pcs,brand:a.key,val:a.val};});
   killC("c-pr-scatter");
-  S.charts["c-pr-scatter"]=new Chart(document.getElementById("c-pr-scatter"),{type:"bubble",data:{datasets:[{label:"",data:scatterData.map(function(d){return {x:d.x,y:d.y,r:Math.max(6,Math.min(34,Math.sqrt(d.val)/30)),brand:d.brand};}),backgroundColor:scatterData.map(function(d){return hexA(brandColor(d.brand),.6);}),borderColor:scatterData.map(function(d){return brandColor(d.brand);}),borderWidth:1.5,datalabels:{display:function(ctx){return ctx.dataset.data[ctx.dataIndex].r>=12;},color:axisColor(),font:{family:FF,size:9,weight:"700"},formatter:function(v){return v.brand.length>12?v.brand.slice(0,11)+"…":v.brand;},anchor:"center",align:"top",offset:3}}]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},onClick:function(e,els){if(els.length){var d=scatterData[els[0].index];if(d)openDrill(filterRows({brand:d.brand,ptype:S.prType}),{title:d.brand,sub:t("pr.scatter")});}},plugins:{legend:{display:false},datalabels:{},tooltip:{callbacks:{label:function(it){var d=it.raw;return [d.brand,t("dk.avgprice")+": "+curSym()+nf(d.x),t("dk.qty")+": "+nf(d.y)+" "+t("unit.pcs")];}}}},scales:{x:{title:{display:true,text:t("dk.avgprice")+" ("+S.currency+"/"+t("unit.pcs")+")",font:{family:FF,size:11},color:axisColor()},beginAtZero:true,grid:{color:gridColor()},ticks:{font:{family:FF,size:10},color:axisColor(),callback:function(v){return curSym()+nf(v);}}},y:{title:{display:true,text:t("dk.qty")+" ("+t("unit.pcs")+")",font:{family:FF,size:11},color:axisColor()},beginAtZero:true,grid:{color:gridColor()},ticks:{font:{family:FF,size:10},color:axisColor(),callback:function(v){return qf(v);}}}}}});
+  S.charts["c-pr-scatter"]=new Chart(document.getElementById("c-pr-scatter"),{type:"bubble",data:{datasets:[{label:"",data:scatterData.map(function(d){return {x:d.x,y:d.y,r:Math.max(6,Math.min(34,Math.sqrt(d.val)/30)),brand:d.brand};}),backgroundColor:scatterData.map(function(d){return hexA(brandColor(d.brand),.6);}),borderColor:scatterData.map(function(d){return brandColor(d.brand);}),borderWidth:1.5,datalabels:{display:function(ctx){return ctx.dataset.data[ctx.dataIndex].r>=12;},color:axisColor(),font:{family:FF,size:9,weight:"700"},formatter:function(v){return v.brand.length>12?v.brand.slice(0,11)+"…":v.brand;},anchor:"center",align:"top",offset:3}}]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},onClick:function(e,els){if(els.length){var d=scatterData[els[0].index];if(d)openDrill(filterRows({brand:d.brand,ptype:S.prType}),{title:d.brand,sub:t("pr.scatter")});}},plugins:{legend:{display:false},datalabels:{},tooltip:{callbacks:{label:function(it){var d=it.raw;return [d.brand,t("dk.avgprice")+": "+uprFmt(d.x),t("dk.qty")+": "+nf(d.y)+" "+t("unit.pcs")];}}}},scales:{x:{title:{display:true,text:t("dk.avgprice")+" ("+S.currency+"/"+t("unit.pcs")+")",font:{family:FF,size:11},color:axisColor()},beginAtZero:true,grid:{color:gridColor()},ticks:{font:{family:FF,size:10},color:axisColor(),callback:function(v){return uprFmt(v);}}},y:{title:{display:true,text:t("dk.qty")+" ("+t("unit.pcs")+")",font:{family:FF,size:11},color:axisColor()},beginAtZero:true,grid:{color:gridColor()},ticks:{font:{family:FF,size:10},color:axisColor(),callback:function(v){return qf(v);}}}}}});
   ["High","Mid","Low"].forEach(function(seg){var rr=segAgg[seg].rows;var ag=sortDesc(toArr(aggBy(rr,function(r){return r.brand;})),S.metric==="val"?"val":"pcs").slice(0,6);var tot=rr.reduce(function(s,r){return s+(S.metric==="val"?r.val:r.pcs);},0);drawSegLeader("c-pr-seg"+seg[0],ag,seg,tot);});
   afterRender("sec-price");
 }
@@ -1151,14 +1356,14 @@ function renderVS(){
     +'</div></div></div>';}
   var H='<div class="g2">'+colCard(S.vsA,A,cA)+colCard(S.vsB,B,cB)+'</div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.results")+' — '+metricLabel()+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-year"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.priceyear")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-price"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.results")+' — '+metricLabel()+cinfo("vs.year")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-year"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.priceyear")+cinfo("vs.price")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-price"></canvas></div></div></div></div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.byptype")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-ptype"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.byorigin")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-origin"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.byptype")+cinfo("vs.ptype")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-ptype"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.byorigin")+cinfo("vs.origin")+'</div></div><div class="cb"><div class="cw"><canvas id="c-vs-origin"></canvas></div></div></div></div>';
   H+='<div class="g2">'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.brandname")+'</div><div class="cs">'+(LANG==="vi"?"Top nhãn hiệu mỗi hãng":"Top brand names each side")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-vs-bname"></canvas></div></div></div>'
-    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.share")+'</div><div class="cs">'+(LANG==="vi"?"Trong tổng nhập của kỳ":"Of total imports")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-vs-share"></canvas></div></div></div></div>';
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.brandname")+cinfo("vs.bname")+'</div><div class="cs">'+(LANG==="vi"?"Top nhãn hiệu mỗi hãng":"Top brand names each side")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-vs-bname"></canvas></div></div></div>'
+    +'<div class="card reveal"><div class="ch"><div class="ct">'+t("vs.share")+cinfo("vs.share")+'</div><div class="cs">'+(LANG==="vi"?"Trong tổng nhập của kỳ":"Of total imports")+'</div></div><div class="cb"><div class="cw t"><canvas id="c-vs-share"></canvas></div></div></div></div>';
   document.getElementById("vs-body").innerHTML=H;
 
   var ys=activeYears();
@@ -1168,7 +1373,7 @@ function renderVS(){
     {label:S.vsB,data:ys.map(function(y){return MV(by[y]||{val:0,pcs:0});}),backgroundColor:cB,borderRadius:5,datalabels:{display:true,anchor:"end",align:"top",color:cB,font:{family:FF,size:9.5,weight:"800"},formatter:function(v){return v?mval(v):"";}}}
   ],fmt:mval,padTop:22});
   function pYr(rows){return ys.map(function(y){var rr=rows.filter(function(r){return r.year===y;});var v=0,p=0;rr.forEach(function(r){v+=r.val;p+=r.pcs;});return p?Math.round(toCur(v/p)*1000)/1000:0;});}
-  lineChart("c-vs-price",ys,[{label:S.vsA,data:pYr(RA),borderColor:cA,fill:false,tension:.3,borderWidth:3,pointRadius:3},{label:S.vsB,data:pYr(RB),borderColor:cB,fill:false,tension:.3,borderWidth:3,pointRadius:3}],function(v){return curSym()+nf(v);});
+  lineChart("c-vs-price",ys,[{label:S.vsA,data:pYr(RA),borderColor:cA,fill:false,tension:.3,borderWidth:3,pointRadius:3},{label:S.vsB,data:pYr(RB),borderColor:cB,fill:false,tension:.3,borderWidth:3,pointRadius:3}],function(v){return uprFmt(v);});
   var pts=PTYPES.slice(0,6);
   barChart("c-vs-ptype",{labels:pts.map(function(p){return p.length>13?p.slice(0,12)+"…":p;}),datasets:[
     {label:S.vsA,data:pts.map(function(p){return RA.filter(function(r){return r.ptype===p;}).reduce(function(s,r){return s+MV(r);},0);}),backgroundColor:cA,borderRadius:5,datalabels:{display:false}},
@@ -1192,14 +1397,23 @@ function renderVS(){
   afterRender("sec-vs");
 }
 
-/* ════════════════ RENDER ALL + BOOT ════════════════ */
+/* ════════════════ RENDER ALL + BOOT ════════════════
+   LAZY: chỉ render tab đang mở. Các tab khác đánh dấu "dirty" và render khi mở tới.
+   → tránh vẽ ~40 chart cùng lúc lúc load. */
+var _dirty={market:true,brand:true,price:true,vs:true};
+function renderTab(tb){
+  if(tb==="market")renderMarket();
+  else if(tb==="brand")renderBrand();
+  else if(tb==="price")renderPrice();
+  else if(tb==="vs")renderVS();
+  _dirty[tb]=false;
+}
 function renderAll(){
   try{renderTimeBar();}catch(e){}
   try{buildSidebars();}catch(e){console.warn("sidebar",e);}
-  try{renderMarket();}catch(e){console.warn("market",e);}
-  try{renderBrand();}catch(e){console.warn("brand",e);}
-  try{renderPrice();}catch(e){console.warn("price",e);}
-  try{renderVS();}catch(e){console.warn("vs",e);}
+  // đổi filter/metric → mọi tab cần vẽ lại, nhưng chỉ vẽ NGAY tab hiện tại
+  _dirty={market:true,brand:true,price:true,vs:true};
+  try{renderTab(S.tab);}catch(e){console.warn(S.tab,e);}
   setTimeout(function(){var a=document.querySelector(".sec.on");if(a){a.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});animateBars(a);}},30);
 }
 function reloadData(){fetchData().then(renderAll).catch(function(e){showToast(t("err")+" "+(e.message||e),"warn");});}
@@ -1237,8 +1451,16 @@ function chartImg(id){var ch=S.charts[id],el=document.getElementById(id);if(!ch|
 function fitRect(bx,by,bw,bh,ratio){var w=bw,h=w/(ratio||1.6);if(h>bh){h=bh;w=h*ratio;}return {x:bx+(bw-w)/2,y:by+(bh-h)/2,w:w,h:h};}
 function chartSpec(id){
   var ch=S.charts[id];if(!ch||!ch.config)return null;var type=ch.config.type,d=ch.data||{},labels=(d.labels||[]).map(String),dss=d.datasets||[];
-  if((type==="bubble")||(!labels.length&&type!=="doughnut"))return null;
   if(!dss.length)return null;
+  // BUBBLE/SCATTER → scatter thật trong PPT (editable). Mỗi điểm = 1 hãng (series riêng để có màu + tên).
+  if(type==="bubble"){
+    var pts=(dss[0].data||[]).map(function(p,i){var col=Array.isArray(dss[0].backgroundColor)?dss[0].backgroundColor[i]:dss[0].backgroundColor;return {name:pTxt(p.brand||("#"+(i+1))),x:+p.x||0,y:+p.y||0,color:_hex(col)};});
+    if(!pts.length)return null;
+    return {kind:"scatter",pts:pts,
+      xTitle:(ch.config.options&&ch.config.options.scales&&ch.config.options.scales.x&&ch.config.options.scales.x.title&&ch.config.options.scales.x.title.text)||"",
+      yTitle:(ch.config.options&&ch.config.options.scales&&ch.config.options.scales.y&&ch.config.options.scales.y.title&&ch.config.options.scales.y.title.text)||""};
+  }
+  if(!labels.length&&type!=="doughnut")return null;
   if(type==="doughnut"||type==="pie"){var ds0=dss[0];if(!ds0.data.length)return null;return {kind:"doughnut",data:[{name:id,labels:labels,values:ds0.data.map(function(v){return +v||0;})}],colors:labels.map(function(l,i){return _firstColor(ds0.backgroundColor,i);})};}
   if(type==="line"){return {kind:"line",labels:labels,dss:dss.map(function(ds){return {name:pTxt(ds.label||"Series"),values:ds.data.map(function(v){return +v||0;}),color:_hex(ds.borderColor)};})};}
   var stacked=!!(ch.config.options&&ch.config.options.scales&&ch.config.options.scales.x&&ch.config.options.scales.x.stacked);
@@ -1252,6 +1474,24 @@ function addChart(slide,id,x,y,w,h){
   try{
     if(sp.kind==="doughnut"){slide.addChart("doughnut",sp.data,Object.assign({},base,{chartColors:sp.colors,holeSize:60,showLegend:true,legendPos:"r",dataLabelColor:"FFFFFF",showValue:false,showPercent:true}));return true;}
     if(sp.kind==="line"){slide.addChart("line",sp.dss.map(function(s){return {name:s.name,labels:sp.labels,values:s.values};}),Object.assign({},base,{chartColors:sp.dss.map(function(s){return s.color;}),lineSize:2,lineSmooth:true,showLegend:sp.dss.length>1}));return true;}
+    if(sp.kind==="scatter"){
+      // pptxgenjs scatter: dataset[0]=X (labels), datasets tiếp theo = từng series Y.
+      // Để mỗi hãng có màu + tên riêng, tạo ma trận: mỗi hãng 1 series, chỉ có 1 giá trị Y tại cột của nó.
+      var n=sp.pts.length;
+      var xVals=sp.pts.map(function(p){return p.x;});
+      var data=[{name:"X",values:xVals}];
+      sp.pts.forEach(function(p,i){var ys=[];for(var k=0;k<n;k++)ys.push(k===i?p.y:null);data.push({name:p.name,values:ys});});
+      slide.addChart("scatter",data,Object.assign({},base,{
+        chartColors:sp.pts.map(function(p){return p.color;}),
+        showLegend:true,legendPos:"r",legendFontSize:7,
+        lineSize:0,lineDataSymbol:"circle",lineDataSymbolSize:9,
+        showTitle:false,
+        catAxisTitle:sp.xTitle,showCatAxisTitle:!!sp.xTitle,catAxisTitleFontSize:9,catAxisTitleColor:PPT.navy,
+        valAxisTitle:sp.yTitle,showValAxisTitle:!!sp.yTitle,valAxisTitleFontSize:9,valAxisTitleColor:PPT.navy,
+        valGridLine:{style:"solid",color:"E6EBF2",size:0.5},catGridLine:{style:"solid",color:"E6EBF2",size:0.5}
+      }));
+      return true;
+    }
     var data,opts=Object.assign({},base,{barDir:sp.horiz?"bar":"col",barGrouping:sp.stacked?"stacked":"clustered",barGapWidthPct:45});
     if(sp.single){data=[{name:pTxt(sp.dss[0].label||"Series"),labels:sp.labels,values:sp.labels.map(function(l,i){return +sp.dss[0].data[i]||0;})}];opts.chartColors=sp.singleColors;opts.showLegend=false;}
     else{data=sp.dss.map(function(ds){return {name:pTxt(ds.label||"Series"),labels:sp.labels,values:sp.labels.map(function(l,i){return +ds.data[i]||0;})};});opts.chartColors=sp.dss.map(function(ds){return _firstColor(ds.backgroundColor,0);});}
